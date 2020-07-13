@@ -41,14 +41,14 @@
             $_SESSION['estado'] = 'success';
             $_SESSION['mensaje'] = 'El empleador fue agregado exitosamente';
             //regresamos a la pagina de creacion de empleadores
-            header('location: ../Vista/vista_crear_empleado.php?exit=true');
+            header('location: ../Vista/vista_crear_empleado.php?');
         }else{
-            //creamos variables de session para ennviar un mensaje
+            //creamos variables de session para enviar un mensaje
             session_start();
             $_SESSION['estado'] = 'danger';
             $_SESSION['mensaje'] = 'El empleador no fue agregado, lo sentimos';
             //regresamos a la pagina de creacion de empleadores
-            header('location: ../Vista/vista_crear_empleado.php?exit=false');
+            header('location: ../Vista/vista_crear_empleado.php?');
         }
 
 

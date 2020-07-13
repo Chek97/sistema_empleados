@@ -8,17 +8,28 @@
           include('../Controlador/controlador_reportes.php'); ?>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container contenedor">
         <div>
-            <a href="principal.php"><button type="button" class="btn btn-danger">Regresar</button></a>
+            <a href="principal.php"><button type="button" class="btn btn-danger boton-accesso"><i class="fa fa-arrow-left"></i> Regresar</button></a>
         </div>
-        <header>
-            <h1>Tabla de Reportes</h1>
+        <header class="titulo">
+            <h1 class="texto-titulo">Tabla de Reportes</h1>
         </header>
-        <div class="table-responsive">
-            <table class="table table-hover">
+        <?php
+            if(count($lista_empleadores) == 0 || count($lista_empleados) == 0){
+        ?>
+            <div class="alert alert-warning mt-4 alert-dismissible fade show" style="text-align: center;" role="alert">
+                <strong>No hay empleados asignados por empleadores</strong>
+                
+            </div>
+            <br>
+        <?php  
+            }else{
+        ?>
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered table-hover tabla-reporte">
                 <thead>
-                    <tr>
+                    <tr class="titulo">
                         <th>Nombre Empleador</th>
                         <th>Cedula Empleador</th>
                         <th>Direccion Empleador</th>
@@ -47,6 +58,7 @@
                  </tbody>
             </table>
         </div>
+        <?php } ?>
 
     </div>
 <?php include_once('Includes/footer.php'); ?>

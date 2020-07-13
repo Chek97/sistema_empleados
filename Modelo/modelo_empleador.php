@@ -1,5 +1,5 @@
 <?php 
-
+// Creamos un modelo para crear un objeto empleador
 class Empleador {
     
     private $nombre;
